@@ -187,13 +187,3 @@ The system can be extended with several advanced features:
 - Client-server architecture for distributed rentals
 
 ---
-
-# 👨‍💻 Author
-
-**Roy Salah**
-
-Electrical & Communication Systems Engineer  
-Ben-Gurion University
-
-GitHub:  
-https://github.com/roeysalah
