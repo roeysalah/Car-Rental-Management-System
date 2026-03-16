@@ -1,57 +1,199 @@
 # 🚗 Car Rental Management System
 
-![C++](https://img.shields.io/badge/language-C%2B%2B-blue)
-![OOP](https://img.shields.io/badge/paradigm-OOP-green)
-![Status](https://img.shields.io/badge/status-Completed-brightgreen)
+## 🎯 Introduction
 
-## 📖 Overview
+The **Car Rental Management System** is an object-oriented C++ project designed to simulate the operations of a small car rental company.
 
-The **Car Rental Management System** is a console-based application written in **C++** that simulates the management of a small car rental company.
+The system demonstrates strong understanding of **Object-Oriented Programming (OOP)** concepts including **encapsulation, class design, modular architecture, and data management** using the **Standard Template Library (STL)**.
 
-The system allows users to manage vehicles, track car availability, and perform rental operations through a simple command-line interface.
-
-This project demonstrates the use of **Object-Oriented Programming (OOP)**, modular design, and data management using C++.
+This project manages a collection of vehicles and allows users to perform typical rental operations such as adding cars, renting vehicles, returning them, and maintaining the inventory.
 
 ---
 
-## 🎯 Features
+# 🧩 Project Overview
 
-- Add new cars to the system  
-- Display all cars in the inventory  
-- Rent a car  
-- Return a rented car  
-- Remove cars from the system  
-- Track car availability status  
+The system allows the user to:
 
----
+- Add new cars to the rental system
+- Display all available cars
+- Rent cars to customers
+- Return rented cars
+- Remove cars from the system
+- Track the availability status of vehicles
+- Manage the rental inventory using a menu-driven interface
 
-## 🧠 Concepts Demonstrated
-
-This project demonstrates several important software engineering concepts:
-
-- Object-Oriented Programming (OOP)
-- Class design and encapsulation
-- Modular system architecture
-- Menu-driven CLI applications
-- Data management using C++ containers
+The application is designed as a **console-based management system** where all operations are performed through a structured command-line menu.
 
 ---
 
-## 🏗️ System Architecture
+# 🏗️ Object-Oriented Design
 
-```mermaid
-flowchart TD
+The project follows a **modular object-oriented architecture**, where each class is responsible for managing a specific component of the system.
 
-A[User CLI Interface] --> B[Rental Management System]
+---
 
-B --> C[Car Class]
-B --> D[Rental Operations]
+## 🚗 1. `Car`
 
-C --> C1[Car ID]
-C --> C2[Model]
-C --> C3[Availability]
+Represents a single vehicle in the rental system.
 
-D --> D1[Add Car]
-D --> D2[Rent Car]
-D --> D3[Return Car]
-D --> D4[Remove Car]
+### Data
+- `carID` – unique identifier of the vehicle
+- `model` – car model name
+- `available` – availability status of the vehicle
+
+### Key Responsibilities
+- Store the details of a car
+- Track whether the car is currently rented
+- Provide access to car information
+
+### Typical Methods
+- `getID()`
+- `getModel()`
+- `isAvailable()`
+- `rentCar()`
+- `returnCar()`
+- `printDetails()`
+
+---
+
+## 🗂️ 2. `RentalSystem`
+
+This class manages the **entire car rental inventory**.
+
+### Data
+- `vector<Car>` containing all cars in the system
+
+### Responsibilities
+- Add cars to the system
+- Remove cars
+- Rent vehicles
+- Return vehicles
+- Display available cars
+
+### Core Methods
+- `addCar()`
+- `removeCar()`
+- `rentCar()`
+- `returnCar()`
+- `showCars()`
+
+The class acts as the **central controller** for all rental operations.
+
+---
+
+## 🖥️ 3. `Main Program`
+
+The program entry point is located in **main.cpp**.
+
+### Responsibilities
+
+- Initialize the rental system
+- Display the menu
+- Process user input
+- Execute rental operations
+
+The main program interacts with the **RentalSystem class** to perform all actions.
+
+---
+
+# 🖥️ Program Flow
+
+1. The program starts from **main.cpp**.
+2. A **RentalSystem** object is created.
+3. The system displays a **menu-driven interface**.
+4. The user selects an option.
+5. The system performs the requested operation.
+6. The process continues until the user selects **Exit**.
+
+---
+
+# 📋 Menu Interface
+
+Example menu displayed to the user:
+
+
+===== Car Rental System =====
+
+Add Car
+
+Show Cars
+
+Rent Car
+
+Return Car
+
+Remove Car
+
+Exit
+
+
+Each option triggers the corresponding operation inside the **RentalSystem** class.
+
+---
+
+# ⚙️ Compilation and Execution
+
+## 🧱 Compile
+
+
+g++ main.cpp Car.cpp RentalSystem.cpp -o car_rental
+
+
+## ▶️ Run
+
+
+./car_rental
+
+
+---
+
+# 🧠 Object-Oriented Concepts Used
+
+This project demonstrates the following programming concepts:
+
+- **Encapsulation**
+- **Class-based architecture**
+- **Modular design**
+- **Separation of responsibilities**
+- **Vector containers (STL)**
+- **Menu-driven program structure**
+
+---
+
+# 📁 Project Structure
+
+
+Car-Rental-Management-System/
+│
+├── Car.cpp
+├── Car.h
+├── RentalSystem.cpp
+├── RentalSystem.h
+├── main.cpp
+└── README.md
+
+
+---
+
+# 🚀 Possible Future Improvements
+
+The system can be extended with several advanced features:
+
+- Customer management system
+- File-based data persistence
+- Database integration (SQLite / PostgreSQL)
+- Graphical user interface (GUI)
+- Online reservation system
+- Client-server architecture for distributed rentals
+
+---
+
+# 👨‍💻 Author
+
+**Roy Salah**
+
+Electrical & Communication Systems Engineer  
+Ben-Gurion University
+
+GitHub:  
+https://github.com/roeysalah
